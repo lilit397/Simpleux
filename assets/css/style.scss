@@ -53,6 +53,23 @@ p {
     margin-top: .3rem;
 }
 
+button {
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+input {
+    width: 80%;
+    line-height: 2;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0px 6px rgb(28, 28, 185);
+    border: none;
+}
+
 .btn-l {
     display: block;
     text-decoration: none;
@@ -327,6 +344,11 @@ p {
         transform: rotate(-45deg);
     }
 }
+
+.active {
+    display: block;
+}
+
 // --- end menu btn ---
 /* cover bg img */
 .cover-bg {
@@ -334,7 +356,7 @@ p {
     top: 0;left: 0;
     width: 100%;
     min-height: 100%;
-    background: url('/assets/img/photo_2021.jpg') no-repeat;
+    background: url('../img/photo_2021.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     transition: .3s;
@@ -473,7 +495,7 @@ main {
         justify-content: center;
 
         .services__card {
-            margin-left: .5rem;
+            margin-left: 1rem;
             .services__icon {
                 width: 80px;
                 height: 80px;
@@ -625,7 +647,6 @@ main {
                 }
             }
         }
-  
     }
 
     .work {
@@ -716,9 +737,11 @@ main {
                 width: fit-content;
                 border: 1px solid rgba($color: #fff, $alpha: 0.3);
                 border-radius: 1rem;
+                border: 2px solid transparent;
                 padding: 1rem;
                 overflow: hidden;
-    
+                transition: .5s;
+
                 .product__img {
                     width: 280px;
                     height: 280px;
@@ -738,6 +761,109 @@ main {
                 .price {
                     font-size: 1.3em;
                 }
+            }
+
+            .products__card:hover {
+                border: 2px solid rgba($color: #fff, $alpha: 0.3);
+            }
+        }
+    }
+
+    .subscribe {
+        width: 70%;
+        .subscribe-text {
+            width: 50%;
+        }
+        .subscribe__form {
+            width: 50%;
+            // padding: 1rem;
+                margin: 1rem;
+
+            .form-control {
+                margin-bottom: 2.5rem;
+
+                label {
+                    font-size: 1.3em;
+                }
+
+                .input-box {
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                        line-height: 2.5;
+                        margin-top: .5rem;
+                        background: transparent;
+                        border: none;
+                        border-bottom: 3px solid #fff;
+                        font-size: 1em;
+
+                        &::placeholder {
+                            color: rgba(170, 170, 170, 0.438);
+                            padding-left: .3rem;
+                        }
+
+                        &:focus {
+                            background: #eee;
+                        }
+
+                        &:focus ~ i {
+                            display: none;
+                        }
+                    }
+
+                    i { 
+                        visibility: hidden;
+                        color: red;
+                        position: absolute;
+                        right: 10px;top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                    }
+
+                    small {
+                        display: none;
+                        position: absolute;
+                        bottom: -1.2rem;
+                        left: 0;
+                    }
+                }                
+            }
+
+            .form-control.success input {
+                width: 100%;
+                border: 2px solid #fff;
+                border-color: #2ecc71;
+            }
+
+            .form-control.success small {
+               display: none;
+            }
+
+            .form-control.error input {
+                width: 100%;
+                border: 3px solid #fff;
+                border-color: #e74c3c;
+            }
+
+            .form-control.success i.uil-check {
+                background: #ddd;
+                visibility: visible;
+                color: #2ecc71;
+            }
+
+            .form-control.success i.uil-exclamation {
+                display: none;
+            }
+
+            .form-control.error i.uil-exclamation {
+                background: #ddd;
+                visibility: visible;
+                color: #e74c3c;
+            }
+
+            .form-control.error i.uil-check {
+                display: none;
             }
         }
     }

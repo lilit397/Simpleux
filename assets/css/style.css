@@ -54,6 +54,24 @@ p {
   margin-top: .3rem;
 }
 
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+input {
+  width: 80%;
+  line-height: 2;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0px 6px #1c1cb9;
+          box-shadow: 0 0px 6px #1c1cb9;
+  border: none;
+}
+
 .btn-l {
   display: block;
   text-decoration: none;
@@ -391,6 +409,10 @@ p {
           transform: rotate(-45deg);
 }
 
+.active {
+  display: block;
+}
+
 /* cover bg img */
 .cover-bg {
   position: fixed;
@@ -398,7 +420,7 @@ p {
   left: 0;
   width: 100%;
   min-height: 100%;
-  background: url("/assets/img/photo_2021.jpg") no-repeat;
+  background: url("../img/photo_2021.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   -webkit-transition: .3s;
@@ -570,7 +592,7 @@ main .services {
 }
 
 main .services .services__card {
-  margin-left: .5rem;
+  margin-left: 1rem;
 }
 
 main .services .services__card .services__icon {
@@ -845,8 +867,11 @@ main .products .products__cards .products__card {
   width: fit-content;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
+  border: 2px solid transparent;
   padding: 1rem;
   overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 main .products .products__cards .products__card .product__img {
@@ -868,6 +893,127 @@ main .products .products__cards .products__card .hr {
 
 main .products .products__cards .products__card .price {
   font-size: 1.3em;
+}
+
+main .products .products__cards .products__card:hover {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+main .subscribe {
+  width: 70%;
+}
+
+main .subscribe .subscribe-text {
+  width: 50%;
+}
+
+main .subscribe .subscribe__form {
+  width: 50%;
+  margin: 1rem;
+}
+
+main .subscribe .subscribe__form .form-control {
+  margin-bottom: 2.5rem;
+}
+
+main .subscribe .subscribe__form .form-control label {
+  font-size: 1.3em;
+}
+
+main .subscribe .subscribe__form .form-control .input-box {
+  position: relative;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input {
+  width: 100%;
+  line-height: 2.5;
+  margin-top: .5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+  font-size: 1em;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input::-webkit-input-placeholder {
+  color: rgba(170, 170, 170, 0.438);
+  padding-left: .3rem;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input:-ms-input-placeholder {
+  color: rgba(170, 170, 170, 0.438);
+  padding-left: .3rem;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input::-ms-input-placeholder {
+  color: rgba(170, 170, 170, 0.438);
+  padding-left: .3rem;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input::placeholder {
+  color: rgba(170, 170, 170, 0.438);
+  padding-left: .3rem;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input:focus {
+  background: #eee;
+}
+
+main .subscribe .subscribe__form .form-control .input-box input:focus ~ i {
+  display: none;
+}
+
+main .subscribe .subscribe__form .form-control .input-box i {
+  visibility: hidden;
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+main .subscribe .subscribe__form .form-control .input-box small {
+  display: none;
+  position: absolute;
+  bottom: -1.2rem;
+  left: 0;
+}
+
+main .subscribe .subscribe__form .form-control.success input {
+  width: 100%;
+  border: 2px solid #fff;
+  border-color: #2ecc71;
+}
+
+main .subscribe .subscribe__form .form-control.success small {
+  display: none;
+}
+
+main .subscribe .subscribe__form .form-control.error input {
+  width: 100%;
+  border: 3px solid #fff;
+  border-color: #e74c3c;
+}
+
+main .subscribe .subscribe__form .form-control.success i.uil-check {
+  background: #ddd;
+  visibility: visible;
+  color: #2ecc71;
+}
+
+main .subscribe .subscribe__form .form-control.success i.uil-exclamation {
+  display: none;
+}
+
+main .subscribe .subscribe__form .form-control.error i.uil-exclamation {
+  background: #ddd;
+  visibility: visible;
+  color: #e74c3c;
+}
+
+main .subscribe .subscribe__form .form-control.error i.uil-check {
+  display: none;
 }
 
 /* --- =============== Footer =============== --- */
